@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		219EC2641DBFBD780022D133 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219EC2631DBFBD780022D133 /* AudioToolbox.framework */; };
 		21BF1F8E1DBE4D42001A45E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BF1F8D1DBE4D42001A45E3 /* AppDelegate.swift */; };
 		21BF1F901DBE4D42001A45E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BF1F8F1DBE4D42001A45E3 /* ViewController.swift */; };
 		21BF1F931DBE4D42001A45E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BF1F911DBE4D42001A45E3 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		219EC2611DBFBD780022D133 /* Sound Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sound Map.entitlements"; sourceTree = "<group>"; };
+		219EC2631DBFBD780022D133 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		21BF1F8A1DBE4D42001A45E3 /* Sound Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BF1F8D1DBE4D42001A45E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BF1F8F1DBE4D42001A45E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219EC2641DBFBD780022D133 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		219EC2621DBFBD780022D133 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				219EC2631DBFBD780022D133 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		21BF1F811DBE4D42001A45E3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +93,7 @@
 				21BF1FA11DBE4D42001A45E3 /* Sound MapTests */,
 				21BF1FAC1DBE4D42001A45E3 /* Sound MapUITests */,
 				21BF1F8B1DBE4D42001A45E3 /* Products */,
+				219EC2621DBFBD780022D133 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +110,7 @@
 		21BF1F8C1DBE4D42001A45E3 /* Sound Map */ = {
 			isa = PBXGroup;
 			children = (
+				219EC2611DBFBD780022D133 /* Sound Map.entitlements */,
 				21BF1F8D1DBE4D42001A45E3 /* AppDelegate.swift */,
 				21BF1F8F1DBE4D42001A45E3 /* ViewController.swift */,
 				21BF1F911DBE4D42001A45E3 /* Main.storyboard */,
@@ -195,6 +209,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = NRVF758M2L;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					21BF1F9D1DBE4D42001A45E3 = {
 						CreatedOnToolsVersion = 8.0;
@@ -415,12 +434,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sound Map/Sound Map.entitlements";
 				DEVELOPMENT_TEAM = NRVF758M2L;
 				INFOPLIST_FILE = "Sound Map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "aries.Sound-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -428,12 +450,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Sound Map/Sound Map.entitlements";
 				DEVELOPMENT_TEAM = NRVF758M2L;
 				INFOPLIST_FILE = "Sound Map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "aries.Sound-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -514,6 +539,7 @@
 				21BF1FB41DBE4D42001A45E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21BF1FB51DBE4D42001A45E3 /* Build configuration list for PBXNativeTarget "Sound MapTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +548,7 @@
 				21BF1FB71DBE4D42001A45E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21BF1FB81DBE4D42001A45E3 /* Build configuration list for PBXNativeTarget "Sound MapUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +557,7 @@
 				21BF1FBA1DBE4D42001A45E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
